@@ -41,9 +41,11 @@ function multipleRomanEval(userInput) {
         userInput = userInput.replace(userInput[0], "");
     }
     console.log(total);
-    console.log(total.reduce(function(total, current) {
+    total = total.reduce(function(total, current) {
         return total + current;
-    }, 0));
+
+    }, 0);
+    return total;
 }
 
 //returns the appropriate value for a single Roman character
