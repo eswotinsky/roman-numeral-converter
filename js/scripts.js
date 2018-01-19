@@ -21,11 +21,12 @@ function main(userInput) {
     }
 }
 
-//CMXXIX  929
+//returns an error message if user input is not a valid Roman numeral construction
 function errorInvalidInput() {
     $("#output").text("Please enter a valid roman numeral combination.")
 }
 
+//check for subtraction cases; add value of any subtraction cases to total array; add values of other characters to total array; return combined value of all elements in total array
 function multipleRomanEval(userInput) {
     var total = [];
     while (subRomanCases.test(userInput)) {
@@ -45,8 +46,7 @@ function multipleRomanEval(userInput) {
     }, 0));
 }
 
-Goal: ["CM","X","X","IX"] 
-
+//returns the appropriate value for a single Roman character
 function singleRomanEval(userInput) {
     switch (userInput) {
     case 'I': return 1;
@@ -59,6 +59,8 @@ function singleRomanEval(userInput) {
     default: return;
     }
 }
+
+//returns the appropriate value for a given two-character subtraction string
 function subtractionSwitch(subInput) {
     switch (subInput) {
         case 'IV': return 4;
