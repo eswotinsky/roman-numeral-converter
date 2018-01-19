@@ -8,9 +8,9 @@
 
 _This program asks users to input a Roman numeral character or string, and returns the equivalent value using Arabic numerals._
 
-_Known issues:_
-Program does not recognize some invalid Roman numeral constructions as being invalid. E.g. "IIII" will evaluate as "4".
-Program attempts to parse some invalid character pairs, and may do so with unintuitive results. E.g. "IC" will evaluate as "101", rather than "99" or (preferably) as invalid.
+**Known Issues:**
+* Program does not recognize some invalid Roman numeral constructions as being invalid. E.g. "IIII" will evaluate as "4".
+* Program attempts to parse some invalid character pairs, and may do so with unintuitive results. E.g. "IC" will evaluate as "101", rather than "99" or (preferably) as invalid.
 
 ## Support and Contact Details
 
@@ -24,4 +24,4 @@ _This project was created in HTML, CSS, and JavaScript, including the Bootstrap 
 
 *This project is released under the GNU GPL license.*
 
-Copyright (c) 2018 **_Eric Swotinsky_and _Tyler Wickline_**
+Copyright (c) 2018 **_Eric Swotinsky_ and _Tyler Wickline_**
