@@ -1,35 +1,51 @@
-$(document).ready(function() {
 var subRomanCases = /iv|ix|xl|xc|cd|cm/i;
 var nonRomanRegex = /[^IVXLCDM]/ig;
 
+$(document).ready(function() {
     $("form#roman-form").submit(function(event) {
         event.preventDefault();
         var userInput = ($("#romanInput").val()).toUpperCase();
-        if (nonRomanRegex.test(userInput)) {
-            errorInvalidInput();
-        }
-
+        $("#output").text(main(userInput));
     })    
-
 });
 
+function main(userInput) {
+    if (nonRomanRegex.test(userInput)) {
+        return errorInvalidInput();
+    }
+    if (userInput.length == 1) {
+        return singleRomanEval(userInput);
+    }
+    else {
+        return multipleRomanEval(userInput);
+    }
+}
 
-
-
+//CMXXIX  929
 function errorInvalidInput() {
     $("#output").text("Please enter a valid roman numeral combination.")
 }
 
-
-
 function multipleRomanEval(userInput) {
-    for (var i = 0; i < userInput.length; i++) {
-        if (subRomanCases.test(userInput)) {
-
-        }
+    var total = [];
+    while (subRomanCases.test(userInput)) {
+        //Explore .match method for combining subtraction cases into an array.
+        var subIndex = userInput.search(subRomanCases)
+        var indexVal = (userInput[subIndex]+userInput[subIndex+1])
+        userInput = userInput.replace(indexVal, "");
+        total.push(subtractionSwitch(indexVal));
     }
+    while (userInput.length > 0) {
+        total.push(singleRomanEval(userInput[0]));
+        userInput = userInput.replace(userInput[0], "");
+    }
+    console.log(total);
+    console.log(total.reduce(function(total, current) {
+        return total + current;
+    }, 0));
 }
 
+Goal: ["CM","X","X","IX"] 
 
 function singleRomanEval(userInput) {
     switch (userInput) {
