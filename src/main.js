@@ -1,13 +1,20 @@
 import './styles.css';
-
+import {convertToRoman} from './convertToRoman.js';
+import $ from 'jquery';
 var subRomanCases = /iv|ix|xl|xc|cd|cm/i;
 var nonRomanRegex = /[^IVXLCDM]/ig;
 
 $(document).ready(function() {
   $("form#roman-form").submit(function(event) {
     event.preventDefault();
-    var userInput = ($("#romanInput").val()).toUpperCase();
-    $("#output").text(main(userInput));
+    var userInput = ($("#convert-to-number-input").val()).toUpperCase();
+    $("#convert-to-roman-output").text(main(userInput));
+  });
+
+  $("form#convert-to-roman").submit(function(event) {
+    event.preventDefault();
+    var userInput = ($("#convert-to-roman-input").val()).toUpperCase();
+    $("#convert-to-number-output").text(convertToRoman(userInput));
   });
 });
 
