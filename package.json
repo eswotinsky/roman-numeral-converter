@@ -4,7 +4,8 @@
   "description": "#### _Tool for converting Roman numeral input into Arabic numerals, 01.18.2018_",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack --mode development",
+    "start": "webpack-dev-server --open"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "style-loader": "^0.20.2",
     "uglifyjs-webpack-plugin": "^1.2.2",
     "webpack": "^4.0.1",
-    "webpack-cli": "^2.0.9"
+    "webpack-cli": "^2.0.9",
+    "webpack-dev-server": "^3.1.0"
   }
 }
