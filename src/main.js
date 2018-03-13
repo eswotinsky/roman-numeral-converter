@@ -1,3 +1,5 @@
+import './styles.css';
+
 var subRomanCases = /iv|ix|xl|xc|cd|cm/i;
 var nonRomanRegex = /[^IVXLCDM]/ig;
 
