@@ -1,0 +1,16 @@
+{
+  "name": "roman-numeral",
+  "version": "1.0.0",
+  "description": "#### _Tool for converting Roman numeral input into Arabic numerals, 01.18.2018_",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.9"
+  }
+}

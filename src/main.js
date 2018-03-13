@@ -6,7 +6,7 @@ $(document).ready(function() {
         event.preventDefault();
         var userInput = ($("#romanInput").val()).toUpperCase();
         $("#output").text(main(userInput));
-    })    
+    })
 });
 
 function main(userInput) {
